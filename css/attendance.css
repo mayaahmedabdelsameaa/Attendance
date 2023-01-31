@@ -1,0 +1,33 @@
+.attendance h1{
+  color: var(--main);
+  text-shadow: 2px 2px 3px var(--grey);
+}
+.attendance .input-section input[type=text]{
+  border: 1px solid var(--grey);
+  outline: none;
+}
+.attendance .input-section input[type=text]:focus{
+  border: 1px solid var(--main);
+}
+.attendance .input-section input[type=button]{
+  border: 1px solid var(--main);
+  background-color: var(--main);
+  outline: none;
+}
+.attendance .input-section input[type=button]:hover{
+  background-color: var(--hover);
+}
+.attendance .warning small{
+  display: none;
+}
+.attendance table tr {
+  padding: .5rem 0;
+}
+.attendance table thead tr {
+  border: 1px solid var(--main);
+}
+.attendance table thead th{
+  background-color: var(--main);
+  color: white;
+}
+

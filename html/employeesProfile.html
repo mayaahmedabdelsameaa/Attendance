@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epmloyee Profile</title>
+  <!-- ****************** vendore links ****************** -->
+  <link rel="icon" type="image/x-icon" href="../vendors/favicon_io/favicon.ico" />
+  <!-- bootstrap  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" />
+  
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../vendors/css/dataTables.bootstrap5.min.css">
+
+
+
+  <!-- ****************** Own links ****************** -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="stylesheet" href="../css/calender.css">
+</head>
+
+<body>
+
+  <div class="main">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- start side-nav  -->
+        <div class="col-12 col-sm-4 col-md-3 d-flex justify-content-between flex-wrap flex-column  side-nav"
+          id="#sidebar">
+          <button id="myBtn">Top</button>
+          <ul class="nav flex-column text-white w-100">
+            <p class="title ms-2 fs-3 fw-bold my-2">
+              welcome
+            </p>
+            <li class="nav-item">
+              <a href="employeesProfile.html" class="nav-link">Employee Dashboard</a>
+            </li>
+            <p class="sub-title ms-2 fs-6 fw-bold my-2">
+              Employees
+            </p>
+            <p class="sub-title ms-2 fw-bold my-2">
+              Calender
+            </p>
+            <li class="nav-item">
+              <a href="#normal-calender" class="nav-link">Attendance Table</a>
+            </li>
+            <li class="nav-item">
+              <a href="#range-calender" class="nav-link">Range Attendance Table</a>
+            </li>
+            
+          </ul>
+        </div>
+        <!-- end side-nav  -->
+
+        <div class="col-12 col-sm-8 col-md-9">
+          <!-- start header  -->
+          <header class="header fixed-top d-flex text-white">
+            <div class="header-left mx-1 my-auto text-center w-25">
+              <i class="fa-solid fa-magnifying-glass-chart fs-3 my-3"></i>
+            </div>
+            <div class="title my-auto d-flex justify-content-center w-50 ">
+              <a href="#" class="my-auto" id="menu-btn">
+                <i class="fa-solid fa-bars-staggered text-white"></i>
+              </a>
+              <h3 class="mx-2">Our System</h3>
+            </div>
+            <div class="w-25 d-flex  justify-content-end">
+              <img src="../images/personal-img.svg" class="img-fluid h-75 mt-2 text-bg-light rounded-5 " alt="">
+              <p class="mx-3 my-auto" id="userUserName">Employee</p>
+            </div>
+          </header>
+          <!-- end header  -->
+
+          <!-- start info  -->
+          <div class="info" id="normal-calender">
+            <div class="container-fluid">
+              <div class="row g-2">
+                <h4 class="mt-3 title" id="name"></h4>
+                <p class="sub-title" id="userEmail">Calender</p>
+                <div class="report d-block d-md-flex justify-content-center align-items-center text-center">
+                  <div class="col-md-4 col-12 mb-2">
+                    <button id="btn-submit" class="btn-1 py-1 px-2 ms-auto">Get Report</button>
+                  </div>
+                  <div class="col-md-4 col-12 mb-2">
+                    <input type="date" class="input-date w-75" id="date-input" />
+                  </div>
+                  <div class="col-md-4 col-12 mb-2">
+                    <select class="selection" name="" id="select">
+                      <option value="Daily" selected>Daily</option>
+                      <option value="Weekly">Weekly</option>
+                      <option value="Monthly">Monthly</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="card mx-auto mb-sm-2 col-md-3 col-12 col-auto">
+                  <div class="card-body text-center">
+                    <div class="d-flex">
+                      <div><i class="fw-bold fs-4 fa-solid fa-clipboard-user"></i></div>
+                      <h5 class="ms-auto cardOne">Zero attendance</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mx-auto mb-sm-2 col-md-3 col-12 col-auto">
+                  <div class="card-body text-center">
+                    <div class="d-flex">
+                      <div><i class="fw-bold fs-4 fa-solid fa-clock"></i></div>
+                      <h5 class="ms-auto cardTwo">Zero Late</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mx-auto mb-sm-2 col-md-3 col-12 col-auto">
+                  <div class="card-body text-center">
+                    <div class="d-flex">
+                      <div><i class="fw-bold fs-4 fa-solid fa-person-walking"></i></div>
+                      <h5 class="ms-auto cardThree">Zero leave early</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- end info  -->
+
+          <!-- strat tables  -->
+          <section class="tables my-5 col-12">
+            <div class="row" id="attendance">
+              <div class="text-center mb-3">
+                <input type="text" id="searchoption" class="w-50 py-1 ps-1" placeholder="Search">
+              </div>
+              <div class="table-container">
+                <div class="table-title">
+                  <h2 class="my-4 text-center">Attendance Table</h2>
+                </div>
+                <table  class="table table-striped  w-100 w-sm-75">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center">UserName</th>
+                      <th scope="col" class="text-center">Arrival Time</th>
+                      <th scope="col" class="text-center">Name</th>
+                      <th scope="col" class="text-center">Late</th>
+                      <th scope="col" class="text-center">Date</th>
+                      <th scope="col" class="text-center">Leave Time</th>
+                      <th scope="col" class="text-center">Early</th>
+                    </tr>
+                  <tbody>
+
+                  </tbody>
+                  </thead>
+                  <tbody id="table-attendance"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <!-- ebd tables-->
+          <!-- start info  -->
+          <div class="info " id="range-calender">
+            <div class="container-fluid">
+              <div class="row g-2">
+                <h4 class="mt-3 title">Range</h4>
+                <p class="sub-title">Calender</p>
+                <div class="report d-block d-md-flex justify-content-center align-items-center text-center">
+                  <div class="col-md-4 col-12 mb-2">
+                    <button id="btn-range" class="btn-1 py-1 px-2 ms-auto">Get Report</button>
+                  </div>
+                  <div class="col-md-4 col-12 mb-2">
+                    <input type="date" class="input-date w-75" id="start-date" />
+                  </div>
+                  <div class="col-md-4 col-12 mb-2">
+                    <input type="date" class="input-date w-75" id="end-date" />
+                  </div>
+                  
+                </div>
+                <div class="card mx-auto mb-sm-2 col-md-3 col-12 col-auto">
+                  <div class="card-body text-center">
+                    <div class="d-flex">
+                      <div><i class="fw-bold fs-4 fa-solid fa-clipboard-user"></i></div>
+                      <h5 class="ms-auto cardFour">Zero attendance</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mx-auto mb-sm-2 col-md-3 col-12 col-auto">
+                  <div class="card-body text-center">
+                    <div class="d-flex">
+                      <div><i class="fw-bold fs-4 fa-solid fa-clock"></i></div>
+                      <h5 class="ms-auto cardFive">Zero Late</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mx-auto mb-sm-2 col-md-3 col-12 col-auto">
+                  <div class="card-body text-center">
+                    <div class="d-flex">
+                      <div><i class="fw-bold fs-4 fa-solid fa-person-walking"></i></div>
+                      <h5 class="ms-auto cardSix">Zero leave early</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- end info  -->
+
+          <!-- strat tables  -->
+          <section class="tables my-5 col-12">
+            <div class="row" id="attendance">
+              <div class="text-center mb-3">
+                <input type="text" id="searchrange" class="w-50 py-1 ps-1" placeholder="Search">
+              </div>
+              <div class="table-container">
+                <div class="table-title">
+                  <h2 class="my-4 text-center">Range Attendance Table</h2>
+                </div>
+                <table class="table table-striped  w-100 w-sm-75">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center">UserName</th>
+                      <th scope="col" class="text-center">Arrival Time</th>
+                      <th scope="col" class="text-center">Late</th>
+                      <th scope="col" class="text-center">Date</th>
+                      <th scope="col" class="text-center">Leave Time</th>
+                      <th scope="col" class="text-center">Early</th>
+                    </tr>
+                  <tbody>
+
+                  </tbody>
+                  </thead>
+                  <tbody id="table-attendance-two" ></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <!-- ebd tables-->
+
+
+
+
+
+
+    </div>
+
+
+
+    <!-- *********** vendors ************ -->
+    <!-- bootstrap -->
+
+
+    <script src="../vendors/js/jquery-3.5.1.js"></script>
+    <script src="../vendors/js/jquery.dataTables.min.js"></script>
+    <script src="../vendors/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
+    <!-- link chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+    <!-- ******* Own ******* -->
+    <script src="../js/employeeProfile.js"></script>
+
+
+
+
+</body>
+
+</html>

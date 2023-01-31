@@ -1,0 +1,452 @@
+{
+  "attendance": [
+    {
+      "id": 1,
+      "userName": "Maya2750V",
+      "time": "9:12",
+      "date": "1/1/2023",
+      "late": 1,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 2,
+      "userName": "maha2D@ZS",
+      "time": "9:00",
+      "date": "1/1/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 4,
+      "userName": "MostZMYPA",
+      "time": "9:10",
+      "date": "1/3/2023",
+      "late": 1,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 5,
+      "userName": "AbdoN-165",
+      "time": "9:00",
+      "date": "1/3/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 6,
+      "userName": "Maya2750V",
+      "time": "9:12",
+      "date": "1/4/2023",
+      "late": 1,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 7,
+      "userName": "maha2D@ZS",
+      "time": "9:00",
+      "date": "1/4/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 8,
+      "userName": "MohaDECFC",
+      "time": "9:02",
+      "date": "1/7/2023",
+      "late": 0,
+      "leaving": "13:00",
+      "early": 1,
+      "permission": 0
+    },
+    {
+      "id": 9,
+      "userName": "MostZMYPA",
+      "time": "9:10",
+      "date": "1/8/2023",
+      "late": 1,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 10,
+      "userName": "AbdoN-165",
+      "time": "9:00",
+      "date": "1/8/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 11,
+      "userName": "Maya2750V",
+      "time": "9:20",
+      "date": "1/9/2023",
+      "late": 1,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 12,
+      "userName": "maha2D@ZS",
+      "time": "9:00",
+      "date": "1/10/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 13,
+      "userName": "MohaDECFC",
+      "time": "9:02",
+      "date": "1/11/2023",
+      "late": 0,
+      "leaving": "13:00",
+      "early": 1,
+      "permission": 0
+    },
+    {
+      "id": 14,
+      "userName": "MostZMYPA",
+      "time": "9:10",
+      "date": "1/12/2023",
+      "late": 1,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 15,
+      "userName": "AbdoN-165",
+      "time": "9:00",
+      "date": "1/12/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 16,
+      "userName": "MostZMYPA",
+      "time": "9:00",
+      "date": "1/15/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 17,
+      "userName": "MostZMYPA",
+      "time": "9:00",
+      "date": "1/16/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 18,
+      "userName": "MostZMYPA",
+      "time": "9:00",
+      "date": "1/17/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 19,
+      "userName": "MostZMYPA",
+      "time": "9:00",
+      "date": "1/17/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 20,
+      "userName": "MohaDECFC",
+      "time": "9:00",
+      "date": "1/18/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 21,
+      "userName": "MostZMYPA",
+      "time": "9:20",
+      "date": "1/18/2023",
+      "late": 1,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 22,
+      "userName": "MostZMYPA",
+      "time": "9:00",
+      "date": "1/19/2023",
+      "late": 0,
+      "leaving": "12:00",
+      "early": 1,
+      "permission": 0
+    },
+    {
+      "id": 23,
+      "userName": "Maya2750V",
+      "time": "9:00",
+      "date": "1/22/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 24,
+      "userName": "MostZMYPA",
+      "time": "9:10",
+      "date": "1/22/2023",
+      "late": 1,
+      "leaving": "12:00",
+      "early": 1,
+      "permission": 0
+    },
+    {
+      "id": 25,
+      "userName": "MaiGUIOZ",
+      "time": "9:00",
+      "date": "1/23/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 26,
+      "userName": "maha2D@ZS",
+      "time": "9:10",
+      "date": "1/24/2023",
+      "late": 1,
+      "leaving": "12:00",
+      "early": 1,
+      "permission": 0
+    },
+    {
+      "id": 27,
+      "userName": "MaiGUIOZ",
+      "time": "9:00",
+      "date": "1/24/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 28,
+      "userName": "MohaDECFC",
+      "time": "9:10",
+      "date": "1/24/2023",
+      "late": 1,
+      "leaving": "12:00",
+      "early": 1,
+      "permission": 0
+    },
+    {
+      "id": 29,
+      "userName": "MostZMYPA",
+      "time": "9:00",
+      "date": "1/4/2023",
+      "late": 0,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 30,
+      "userName": "MostZMYPA",
+      "time": "9:20",
+      "date": "12/24/2022",
+      "late": 1,
+      "leaving": "14:00",
+      "early": 1,
+      "permission": 0
+    }
+  ],
+  "pending": [
+    {
+      "id": 9,
+      "firstName": "Mayar",
+      "lastName": "Ahmed",
+      "email": "mayarahmed982@gmail.com",
+      "age": "23",
+      "address": "Cairo",
+      "role": "",
+      "userName": "MayaZ1AF@",
+      "password": "A1YfsAL!CnhE3"
+    },
+    {
+      "id": 10,
+      "firstName": "Mayar",
+      "lastName": "Shdeed",
+      "email": "mayarahmed8624@gmail.com",
+      "age": "23",
+      "address": "Dakhlia",
+      "role": "",
+      "userName": "MayaB9U8L",
+      "password": "_a8M2tzxo6RCf"
+    },
+    {
+      "id": 11,
+      "firstName": "zain",
+      "lastName": "zain",
+      "email": "zain@gmail.com",
+      "age": "22",
+      "address": "Cairo",
+      "role": "",
+      "userName": "zain-GPOQ",
+      "password": "DSm5AYJ8EbbiM"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Mayar",
+      "lastName": "Ahmed",
+      "email": "example@gmail.com",
+      "age": "23",
+      "address": "Cairo",
+      "role": "employee",
+      "userName": "Maya2750V",
+      "password": "SY2nV1pDoYj_r"
+    },
+    {
+      "id": 2,
+      "firstName": "Mai",
+      "lastName": "Mohamed",
+      "email": "mai@gmail.com",
+      "age": "34",
+      "address": "Cairo",
+      "role": "secuirty",
+      "userName": "MaiGUIOZ",
+      "password": "WxmNrBQUVD8z9"
+    },
+    {
+      "id": 3,
+      "firstName": "maha",
+      "lastName": "Mohamed",
+      "email": "maha@gmail.com",
+      "age": "45",
+      "address": "Tanta",
+      "role": "employee",
+      "userName": "maha2D@ZS",
+      "password": "cVNqnZhHFV$UV"
+    },
+    {
+      "id": 4,
+      "firstName": "Mohamed",
+      "lastName": "Ahmed",
+      "email": "example1@gmail.com",
+      "age": "23",
+      "address": "Cairo",
+      "role": "employee",
+      "userName": "MohaDECFC",
+      "password": "InubtrU6M0RYP"
+    },
+    {
+      "id": 5,
+      "firstName": "Mostafa",
+      "lastName": "Ahmed",
+      "email": "mostafa@gmail.com",
+      "age": "23",
+      "address": "Giza",
+      "role": "secuirty",
+      "userName": "MostZMYPA",
+      "password": "46lZWiyinWXSa"
+    },
+    {
+      "id": 6,
+      "firstName": "Abdo",
+      "lastName": "Ahmed",
+      "email": "abdo@gmail.com",
+      "age": "35",
+      "address": "Tanta",
+      "role": "employee",
+      "userName": "AbdoN-165",
+      "password": "Hfw94llc6LRlm"
+    },
+    {
+      "id": 7,
+      "firstName": "islam",
+      "lastName": "hamza",
+      "email": "islam@gmail.com",
+      "age": "28",
+      "address": "Mahla",
+      "role": "admin",
+      "userName": "islaN_!6D",
+      "password": "4-QJ32Q6iutT0"
+    },
+    {
+      "id": 8,
+      "firstName": "Mahmoud",
+      "lastName": "Ibrahim",
+      "email": "mahmoud@gmail.com",
+      "age": "30",
+      "address": "Giza",
+      "role": "admin",
+      "userName": "Mahm!7ZJX",
+      "password": "4R5!eUMON%dbI"
+    },
+    {
+      "id": 9,
+      "firstName": "Hend",
+      "lastName": "Hazem",
+      "email": "hend@gmail.com",
+      "age": "35",
+      "address": "Giza",
+      "role": "employee",
+      "userName": "HendEAG0M",
+      "password": "X8z-tUG0tTlCR"
+    },
+    {
+      "id": 10,
+      "firstName": "ammar",
+      "lastName": "Ahmed",
+      "email": "ammar@gmail.com",
+      "age": "25",
+      "address": "Tanta",
+      "role": "employee",
+      "userName": "amma5PTBY",
+      "password": "$RQXEgk!sNcFq"
+    },
+    {
+      "id": 11,
+      "firstName": "Manar",
+      "lastName": "Mostafa",
+      "email": "bent.Ahmed283@gmail.com",
+      "age": "23",
+      "address": "Tanta",
+      "role": "employee",
+      "userName": "ManaXIZ5N",
+      "password": "mS2PFS4umY$MB"
+    }
+  ]
+}

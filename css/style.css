@@ -1,0 +1,41 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --main: #6b79fd ;
+  --secondary: #6610f2;
+  --grey: #a4a4a4;
+  --hover:#5c6cfe;
+  --sub-title:#6c757d;
+}
+/* start framework */
+a{
+  color: var(--main);
+}
+a:hover{
+  color: var(--hover);
+}
+input[type=checkbox]{
+  accent-color: var(--main);
+}
+
+/* end framework */
+/* start home style  */
+#home{
+  background-color: #74EBD5;
+  background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+}
+.home h2{
+  color: var(--main);
+  text-shadow: 2px 2px 3px var(--grey);
+}
+.home .buttons a{
+  border: 1px solid var(--main);
+  background-color: var(--main);
+}
+.home .buttons a:hover{
+  background-color: var(--hover);
+}
+/* end home style  */

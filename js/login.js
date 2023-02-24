@@ -61,6 +61,14 @@ async function LoadName(employee){
 }
 
 
+window.onbeforeunload = function (e) {
+  e.preventDefault();
+  alert("you can't navigate from one page to another");
+};
+window.history.forward();
+function noBack() {
+  window.history.forward();
+}
 
 
 
@@ -71,69 +79,3 @@ async function LoadName(employee){
 
 
 
-
-
-//   // ckeck function
-//   function check(eventt) {
-//     smallUser.style.display = "none";
-//     smallPassword.style.display = "none";
-//     if (user.value.trim()=="") {
-//       smallUser.style.display = "inline";
-//       eventt.preventDefault();
-//     } else {
-//       smallUser.style.display = "none";
-//       flag++;
-//     }
-//     // check password format
-//     if (password.value.trim() == "") {
-//       smallPassword.style.display = "inline";
-//       eventt.preventDefault();
-//     } else {
-//       smallPassword.style.display = "none";
-//       flag++;
-//     }
-//     if(flag==2){
-//       employee.userName=user.value;
-//       employee.password=password.value;
-//       if(!(checkExistance(employee))){
-//         eventt.preventDefault();
-//         alert("Please Enter a vaild data");
-//       }
-//     }
-//   }
-
-// // check the existance 
-// async function checkExistance(employee) {
-//   const mail = await checkEmail(employee);
-//   const mailLen = await mail.json();
-  
-//   const pass = await checkPassword(employee);
-//   const passlen = await pass.json();
-//   console.log(mailLen + "  "+ passlen);
-//   // if((mailLen.length)!=0 && (passlen.length)!=0){
-//   //   console.log(mailLen.userName+"   "+mailLen.userName);
-//   //   if(mailLen.userName==mailLen.userName){
-//   //     return 1;
-//   //   }
-//   //   return 0;
-    
-//   // }
-  
-// }
-
-// // check the email existance in employees
-// async function checkEmail(employee) {
-//   const existance = await fetch(
-//     `http://localhost:3000/employees?userName=${employee.userName}`
-//   );
-//   console.log("user: ",existance);
-//   return existance;
-// }
-// // check the password existance in employees
-// async function checkPassword(employee) {
-//   const existance = await fetch(
-//     `http://localhost:3000/pending?password=${employee.password}`
-//   );
-//   console.log("pass: ",existance);
-//   return existance;
-// }

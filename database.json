@@ -6,8 +6,8 @@
       "time": "9:12",
       "date": "1/1/2023",
       "late": 1,
-      "leaving": "17:00",
-      "early": 0,
+      "leaving": "22:45",
+      "early": 1,
       "permission": 0
     },
     {
@@ -288,6 +288,56 @@
       "late": 1,
       "leaving": "14:00",
       "early": 1,
+      "permission": 0
+    },
+    {
+      "id": 31,
+      "userName": "Maya2750V",
+      "time": "16:12",
+      "date": "2/23/2023",
+      "late": 1,
+      "leaving": "23:1",
+      "early": 1,
+      "permission": 0
+    },
+    {
+      "id": 32,
+      "userName": "Maya2750V",
+      "time": "20:13",
+      "date": "2/23/2023",
+      "late": 1,
+      "leaving": "23:1",
+      "early": 1,
+      "permission": 0
+    },
+    {
+      "id": 33,
+      "userName": "MostZMYPA",
+      "time": "23:57",
+      "date": "2/23/2023",
+      "late": 1,
+      "leaving": "17:00",
+      "early": 0,
+      "permission": 0
+    },
+    {
+      "id": 34,
+      "userName": "maha2D@ZS",
+      "time": "9:58",
+      "date": "2/24/2023",
+      "late": 1,
+      "leaving": "9:58",
+      "early": 1,
+      "permission": 0
+    },
+    {
+      "id": 35,
+      "userName": "MaiGUIOZ",
+      "time": "10:0",
+      "date": "2/24/2023",
+      "late": 1,
+      "leaving": "17:00",
+      "early": 0,
       "permission": 0
     }
   ],

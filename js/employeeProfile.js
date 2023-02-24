@@ -40,6 +40,7 @@ window.addEventListener("load", () => {
   )}`;
   email.innerHTML = localStorage.getItem("email");
   UserName.innerHTML = localStorage.getItem("userName");
+  
 });
 
 scrollButton.addEventListener("click", () => {
@@ -115,17 +116,23 @@ btnRange.addEventListener("click", async () => {
 
 //table for attendance employee Rsnge
 async function loadRangeAttendance() {
-  const response = await fetch(`http://localhost:3000/attendance?userName=${localStorage.getItem("userName")}`);
+  const response = await fetch(
+    `http://localhost:3000/attendance?userName=${localStorage.getItem(
+      "userName"
+    )}`
+  );
   const names = await response.json();
 
   names.forEach((emp) => {
-    if (emp.late == 1 && (emp.date >= start && emp.date <= end)) {lateRange++; console.log("from late ");}
+    if (emp.late == 1 && emp.date >= start && emp.date <= end) {
+      lateRange++;
+      console.log("from late ");
+    }
     if (emp.early == 1 && emp.date >= start && emp.date <= end) earlyRange++;
     if (emp.date >= start && emp.date <= end) {
       attendRange++;
-      rangeNames.push(emp)
+      rangeNames.push(emp);
     }
-    console.log(emp);
   });
   console.log(rangeNames);
   return rangeNames;
@@ -134,10 +141,11 @@ async function loadRangeAttendance() {
 //table for attendance employee daily
 async function loadNamesAttendance() {
   const response = await fetch(
-    `http://localhost:3000/attendance?userName=${localStorage.getItem("userName")}`
+    `http://localhost:3000/attendance?userName=${localStorage.getItem(
+      "userName"
+    )}`
   );
   const names = await response.json();
-  console.log(names);
   names.forEach((emp) => {
     if (emp.late == 1 && emp.date == selectedDate) lateLength++;
     if (emp.early == 1 && emp.date == selectedDate) earlyLength++;
@@ -156,7 +164,11 @@ async function loadNamesAttendance() {
 
 //table for attendance employee for Month
 async function loadNamesAttendanceMonth() {
-  const response = await fetch(`http://localhost:3000/attendance?userName=${localStorage.getItem("userName")}`);
+  const response = await fetch(
+    `http://localhost:3000/attendance?userName=${localStorage.getItem(
+      "userName"
+    )}`
+  );
   const names = await response.json();
   console.log(names);
   dateArr = selectedDate.split("/");
@@ -182,7 +194,11 @@ async function loadNamesAttendanceMonth() {
 
 //table for attendance employee week
 async function loadNamesAttendanceWeek() {
-  const response = await fetch(`http://localhost:3000/attendance?userName=${localStorage.getItem("userName")}`);
+  const response = await fetch(
+    `http://localhost:3000/attendance?userName=${localStorage.getItem(
+      "userName"
+    )}`
+  );
   const names = await response.json();
   console.log(names);
   dateArr = selectedDate.split("/");
@@ -387,13 +403,13 @@ function DrawTableRange(attendanceDataRange) {
       tdDate = document.createElement("td"),
       tdLeave = document.createElement("td"),
       tdEarly = document.createElement("td");
-      (tduser.innerText = attendanceDataRange[i].userName),
+    (tduser.innerText = attendanceDataRange[i].userName),
       (tdArrival.innerText = attendanceDataRange[i].time),
       (tdLate.innerText = attendanceDataRange[i].late),
       (tdDate.innerText = attendanceDataRange[i].date),
       (tdLeave.innerText = attendanceDataRange[i].leaving),
       (tdEarly.innerText = attendanceDataRange[i].early);
-      row.appendChild(tduser),
+    row.appendChild(tduser),
       row.appendChild(tdArrival),
       row.appendChild(tdLate),
       row.appendChild(tdDate),
@@ -403,25 +419,12 @@ function DrawTableRange(attendanceDataRange) {
   }
 } // end attendance attendance table range
 
-searchOption.addEventListener("keydown", () => {
-  let newAttendance = [];
-  setTimeout(() => {
-    let inputValue = searchOption.value;
-    newAttendance = attendanceData.filter((item) => {
-      return (
-        item.name.toLowerCase().includes(inputValue.toLowerCase()) ||
-        item.userName.toLowerCase().includes(inputValue.toLowerCase()) ||
-        item.time.includes(inputValue) ||
-        item.date.includes(inputValue) ||
-        item.leaving.includes(inputValue) ||
-        item.early == inputValue
-      );
-    });
-  });
-  removeData();
-  DrawTable(newAttendance);
-});
-searchOption.addEventListener("blur", () => {
-  removeData();
-  DrawTable(attendanceData);
-});
+window.onbeforeunload = function (e) {
+  window.location.href="employeeProfile.html";
+  e.preventDeafult();
+  alert("You can't navigate using the url");
+};
+window.history.forward();
+function noBack() {
+  window.history.forward();
+}

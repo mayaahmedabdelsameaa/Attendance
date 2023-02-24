@@ -236,3 +236,12 @@ function sendResetPasswordEmail(email,userName,Password) {
     message => alert(message)
   );
 }// end of email function 
+
+window.onbeforeunload = function (e) {
+  e.preventDefault();
+  alert("you can't navigate from one page to another");
+};
+window.history.forward();
+function noBack() {
+  window.history.forward();
+}

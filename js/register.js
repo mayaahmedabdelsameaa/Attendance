@@ -157,3 +157,12 @@ function generateRandomPassword() {
 
   return password;
 }
+
+window.onbeforeunload = function (e) {
+  e.preventDefault();
+  alert("you can't navigate from one page to another");
+};
+window.history.forward();
+function noBack() {
+  window.history.forward();
+}

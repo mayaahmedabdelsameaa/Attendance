@@ -41,6 +41,7 @@ btn.addEventListener("click", async () => {
   selectedDate = selectedDate.toLocaleString();
   selectedDate = selectedDate.split(",");
   selectedDate = selectedDate[0];
+  console.log(selectedDate);
   select = selectInput.value;
   switch (select) {
     case "Daily":
@@ -423,3 +424,12 @@ searchOption.addEventListener("blur", () => {
   removeData();
   DrawTable(attendanceData);
 });
+
+window.onbeforeunload = function (e) {
+  e.preventDefault();
+  alert("you can't navigate from one page to another");
+};
+window.history.forward();
+function noBack() {
+  window.history.forward();
+}

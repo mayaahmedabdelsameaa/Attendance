@@ -31,25 +31,47 @@ async function checkEmployee(userName) {
   const existance = await chechExistanceInEmployees(userName);
   let array = await existance.json();
   let arrayLength = array.length;
-  const existanceInAttendance = await chechExistanceInAttendance(userName);
-  let arrayAttend = await existanceInAttendance.json();
-  let arrayAttendLength = arrayAttend.length;
-  if (arrayLength != 0) {
-    let data = {
-      id: "",
-      userName: userName,
-      time: getCurrentTime(),
-      date: getCurrentDate(),
-    };
-    drawTableRow(data);
-    data.late = late;
-    data.leaving = leaving;
-    data.early = early;
-    data.permission = permission;
-    saveData(data);
-    postData(data);
+  if (arrayLength) {
+    const existanceInAttendance = await chechExistanceInAttendance(userName);
+    let arrayAttend = await existanceInAttendance.json();
+    let arrayAttendLength = arrayAttend.length;
+    if (arrayAttendLength != 0) {
+      let dateNow = getCurrentDate();
+      let flag = 0;
+      arrayAttend.forEach((item) => {
+        if (item.date == dateNow) {
+          flag++;
+        }
+      });
+      if (flag != 0) {
+        small.innerText = "Already exist";
+        small.style.display = "inline";
+      } else {
+        let timeNow = getCurrentTime();
+        timeNow = timeNow.split(":");
+        if (Number(timeNow[0]) >= 17) {
+          small.innerText =
+            "Sorry, you can't enter data now, it's time to leave";
+          small.style.display = "inline";
+        } else {
+          let data = {
+            id: "",
+            userName: userName,
+            time: getCurrentTime(),
+            date: getCurrentDate(),
+          };
+          data.late = late;
+          data.leaving = leaving;
+          data.early = early;
+          data.permission = permission;
+          saveData(data);
+          postData(data);
+          drawTableRow(data);
+        }
+      }
+    }
   } else {
-    small.innerText = "Not Employee or Enter a valid data";
+    small.innerText = "Please, enter a valid user name";
     small.style.display = "inline";
   }
 }
@@ -80,10 +102,10 @@ async function postData(employee) {
     body: JSON.stringify(object),
   });
   const responseText = await response.text();
-  console.log(responseText); // logs 'OK'
 }
 
 // Patch the values
+// debugger;
 async function patchData(object, newTime) {
   const response = await fetch(
     `http://localhost:3000/attendance/${object.id}`,
@@ -106,14 +128,13 @@ async function patchData(object, newTime) {
   );
 }
 
-window.addEventListener("load", function () {
-  bindDataSource();
+window.addEventListener("load", async function () {
+  let response = await bindDataSource();
+  arrData = response;
   drawTable();
 });
-
 function bindDataSourceAfterLeave(user, newTime) {
   let empData = localStorage.getItem("arrData");
-  console.log(empData);
   empData.forEach((emp) => {
     if (emp.userName == user) {
       emp.leave = newTime;
@@ -122,15 +143,16 @@ function bindDataSourceAfterLeave(user, newTime) {
   });
 } //end bind data
 
-function bindDataSource() {
-  let empData = localStorage.getItem("arrData");
-
-  if (empData != null) {
-    arrData = JSON.parse(empData);
-  } else {
-    arrData = [];
-  }
+async function bindDataSource() {
+  // get cuurent date
+  let attendanceDateToday = getCurrentDate();
+  const response = await fetch(
+    `http://localhost:3000/attendance?date=${attendanceDateToday}`
+  );
+  let existance = response.json();
+  return existance;
 } //end bind data
+
 function saveData(data) {
   bindDataSource();
   // bindDataSourceAfterLeave(user,newTime);
@@ -152,7 +174,14 @@ function drawTableRow(data) {
   td1.innerHTML = data.userName;
   td2.innerHTML = data.time;
   td3.innerHTML = data.date;
-  td4.innerHTML = `<input type="checkbox" class="early" onclick="getCurrentTimeForLeave(this)">`;
+  let nowTime = getCurrentTime();
+  nowTime = nowTime.split(":");
+  if (Number(nowTime[0]) >= 17 || data.leaving != "17:00" ) {
+    td4.innerHTML = `<input type="checkbox" checked class="early" onclick="getCurrentTimeForLeave(this)">`;
+    td4.checked = true;
+  } else {
+    td4.innerHTML = `<input type="checkbox" class="early" onclick="getCurrentTimeForLeave(this)">`;
+  }
   tbody.appendChild(createdtr);
 } // end of draw row
 
@@ -174,13 +203,33 @@ function getCurrentTime() {
   return hrs + ":" + mins;
 } // end of get current time
 async function getCurrentTimeForLeave(that) {
-  user = that.parentNode.parentNode.childNodes[0].innerText;
-  console.log(user);
-  let date = new Date();
-  let hrs = date.getHours();
-  let mins = date.getMinutes();
-  newTime = hrs + ":" + mins;
-  let existance = await chechExistanceInAttendance(user);
-  let array = await existance.json();
-  patchData(array[0], newTime);
+  let timeNow = getCurrentTime();
+  timeNow = timeNow.split(":");
+  if (Number(timeNow[0]) >= 17) {
+    small.innerText = "Already Left";
+    small.style.display = "inline";
+  } else {
+    user = that.parentNode.parentNode.childNodes[0].innerText;
+    attendancedate = that.parentNode.parentNode.childNodes[2].innerText;
+    let date = new Date();
+    let hrs = date.getHours();
+    let mins = date.getMinutes();
+    newTime = hrs + ":" + mins;
+    let existance = await chechExistanceInAttendance(user);
+    let array = await existance.json();
+    array.forEach((item) => {
+      if (item.date === attendancedate) {
+        patchData(item, newTime);
+      }
+    });
+  }
+}
+
+window.onbeforeunload = function (e) {
+  e.preventDefault();
+  alert("you can't navigate from one page to another");
+};
+window.history.forward();
+function noBack() {
+  window.history.forward();
 }

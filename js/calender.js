@@ -12,7 +12,7 @@ let scrollButton = document.querySelector("#myBtn"),
   stratDate = document.getElementById("start-date"),
   endDate = document.getElementById("end-date"),
   tbodyOne = document.getElementById("table-attendance"),
-  tbodyTwo = document.getElementById("table-attendance-two");
+  tbodyTwo = document.getElementById("table-attendance-two"),logout = document.querySelector(".logout a");
 let searchOption = document.getElementById("searchoption"),
   searchRange = document.getElementById("searchrange"),
   attendanceData = [],
@@ -425,10 +425,15 @@ searchOption.addEventListener("blur", () => {
   DrawTable(attendanceData);
 });
 
-window.onbeforeunload = function (e) {
-  e.preventDefault();
-  alert("you can't navigate from one page to another");
-};
+// logout 
+logout.addEventListener('click', ()=>{
+  console.log("done ")
+})
+
+// window.onbeforeunload = function (e) {
+//   e.preventDefault();
+//   alert("you can't navigate from one page to another");
+// };
 window.history.forward();
 function noBack() {
   window.history.forward();

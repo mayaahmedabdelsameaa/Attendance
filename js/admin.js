@@ -2,7 +2,7 @@ let menu_btn = document.querySelector("#menu-btn");
 let sidebar = document.querySelector("#sidebar");
 let container = document.querySelector(".my-container");
 let table = document.querySelector(".table-striped");
-
+let logout = document.querySelector(".logout a");
 let scrollButton = document.querySelector("#myBtn");
 
 var pendingData = [];
@@ -237,10 +237,15 @@ function sendResetPasswordEmail(email,userName,Password) {
   );
 }// end of email function 
 
-window.onbeforeunload = function (e) {
-  e.preventDefault();
-  alert("you can't navigate from one page to another");
-};
+// logout 
+logout.addEventListener('click', ()=>{
+  console.log("done ")
+})
+
+// window.onbeforeunload = function (e) {
+//   e.preventDefault();
+//   alert("you can't navigate from one page to another");
+// };
 window.history.forward();
 function noBack() {
   window.history.forward();

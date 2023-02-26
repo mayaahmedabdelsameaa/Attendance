@@ -13,6 +13,7 @@
 /* start framework */
 a{
   color: var(--main);
+  text-decoration: none;
 }
 a:hover{
   color: var(--hover);
@@ -39,3 +40,21 @@ input[type=checkbox]{
   background-color: var(--hover);
 }
 /* end home style  */
+.logout{
+  text-align: right;
+  margin-top: 2rem;
+}
+.logout ul li a{
+  border: 1px solid var(--main);
+  padding: .5rem 1rem;
+  background-color: var(--main);
+  color: white;
+  border-radius: .2rem;
+  -webkit-border-radius: .2rem;
+  -moz-border-radius: .2rem;
+  -ms-border-radius: .2rem;
+  -o-border-radius: .2rem;
+}
+.logout ul li a:hover{
+  background-color: var(--hover);
+}

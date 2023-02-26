@@ -6,6 +6,7 @@ window.addEventListener("load", () => {
   let smalls = document.querySelectorAll("small");
   // select submit button
   let submit = document.getElementById("registerbutton");
+  let logout = document.querySelector(".logout a");
   submit.addEventListener("click", check);
   // add event on all inputs except the submit
   // removing the error message after writing new value
@@ -103,6 +104,9 @@ async function checkEmail(employee) {
     postData(employee);
     alert("Congratlations your Data have been sent, Wait for the E-mail")
   }
+  else{
+    alert("Already Exist, check your email again");
+  }
 }
 
 // check the email existance in pending
@@ -158,10 +162,15 @@ function generateRandomPassword() {
   return password;
 }
 
-window.onbeforeunload = function (e) {
-  e.preventDefault();
-  alert("you can't navigate from one page to another");
-};
+// logout 
+logout.addEventListener('click', ()=>{
+  console.log("done ")
+})
+
+// window.onbeforeunload = function (e) {
+//   e.preventDefault();
+//   alert("you can't navigate from one page to another");
+// };
 window.history.forward();
 function noBack() {
   window.history.forward();

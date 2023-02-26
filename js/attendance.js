@@ -3,7 +3,8 @@
 let userName = document.querySelector("#empName");
 let tbody = document.querySelector(".table-body");
 let confirmButton = document.querySelector("#comfirm-btn");
-let small = document.querySelector(".error-text");
+let small = document.querySelector(".error-text"),
+logout = document.querySelector(".logout a");
 let arrData, user;
 let late = 0,
   leaving = "17:00",
@@ -224,11 +225,15 @@ async function getCurrentTimeForLeave(that) {
     });
   }
 }
+// logout 
+logout.addEventListener('click', ()=>{
+  console.log("done ")
+})
 
-window.onbeforeunload = function (e) {
-  e.preventDefault();
-  alert("you can't navigate from one page to another");
-};
+// window.onbeforeunload = function (e) {
+//   e.preventDefault();
+//   alert("you can't navigate from one page to another");
+// };
 window.history.forward();
 function noBack() {
   window.history.forward();

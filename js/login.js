@@ -1,7 +1,8 @@
 let userValue = document.getElementById("user");
 let smallUser = document.getElementById("smalluser");
 let password = document.getElementById("password");
-let smallPassword = document.getElementById("smallpassword");
+let smallPassword = document.getElementById("smallpassword"),
+logout = document.querySelector(".logout a");
 
 let login = document.getElementById("loginbutton");
 let form = document.querySelector(".form");
@@ -60,11 +61,14 @@ async function LoadName(employee){
   return user;
 }
 
+// logout 
+logout.addEventListener('click', ()=>{
+  console.log("done ")
+})
 
-window.onbeforeunload = function (e) {
-  e.preventDefault();
-  alert("you can't navigate from one page to another");
-};
+// window.onbeforeunload = function (e) {
+//   e.preventDefault();
+// };
 window.history.forward();
 function noBack() {
   window.history.forward();

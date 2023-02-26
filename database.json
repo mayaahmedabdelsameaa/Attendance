@@ -374,6 +374,17 @@
       "role": "",
       "userName": "zain-GPOQ",
       "password": "DSm5AYJ8EbbiM"
+    },
+    {
+      "id": 12,
+      "firstName": "Nahla",
+      "lastName": "Gamal",
+      "email": "example2@gmail.com",
+      "age": "23",
+      "address": "Tanta",
+      "role": "",
+      "userName": "NahlVMREZ",
+      "password": "AKkmA8avLj@IC"
     }
   ],
   "employees": [

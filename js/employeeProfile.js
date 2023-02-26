@@ -16,7 +16,8 @@ let scrollButton = document.querySelector("#myBtn"),
   stratDate = document.getElementById("start-date"),
   endDate = document.getElementById("end-date"),
   tbodyOne = document.getElementById("table-attendance"),
-  tbodyTwo = document.getElementById("table-attendance-two");
+  tbodyTwo = document.getElementById("table-attendance-two"),
+  logout = document.querySelector(".logout a");;
 let searchOption = document.getElementById("searchoption"),
   searchRange = document.getElementById("searchrange"),
   attendanceData = [],
@@ -377,13 +378,29 @@ function DrawTable(attendanceData) {
       tdDate = document.createElement("td"),
       tdLeave = document.createElement("td"),
       tdEarly = document.createElement("td");
+      let attendTime = attendanceData[i].time;
+      attendTime = attendTime.split(":");
+      let hours = Number(attendTime[0])-9, min =Number(attendTime[1])-5;
+      let ltime= attendanceData[i].leaving,lhours,lmin;
+      ltime = ltime.split(":");
+      if(ltime[1]>0){
+        lmin= 60-ltime[1];
+        if(ltime[0]<10){
+          lhours=16-ltime[0]
+        }else{
+          lhours=16-ltime[0];
+        }
+      }else{
+        lhours=17-ltime[0];
+        lmin=0;
+      }
     (tdName.innerText = attendanceData[i].name),
       (tduser.innerText = attendanceData[i].userName),
       (tdArrival.innerText = attendanceData[i].time),
-      (tdLate.innerText = attendanceData[i].late),
+      (tdLate.innerText = (hours+":"+min)),
       (tdDate.innerText = attendanceData[i].date),
       (tdLeave.innerText = attendanceData[i].leaving),
-      (tdEarly.innerText = attendanceData[i].early);
+      (tdEarly.innerText = (lhours+":"+lmin));
     row.appendChild(tdName),
       row.appendChild(tduser),
       row.appendChild(tdArrival),
@@ -403,12 +420,28 @@ function DrawTableRange(attendanceDataRange) {
       tdDate = document.createElement("td"),
       tdLeave = document.createElement("td"),
       tdEarly = document.createElement("td");
+      let attendTime = attendanceDataRange[i].time;
+      attendTime = attendTime.split(":");
+      let hours = Number(attendTime[0])-9, min =Number(attendTime[1])-5;
+      let ltime= attendanceDataRange[i].leaving,lhours,lmin;
+      ltime = ltime.split(":");
+      if(ltime[1]>0){
+        lmin= 60-ltime[1];
+        if(ltime[0]<10){
+          lhours=16-ltime[0]
+        }else{
+          lhours=16-ltime[0];
+        }
+      }else{
+        lhours=17-ltime[0];
+        lmin=0;
+      }
     (tduser.innerText = attendanceDataRange[i].userName),
       (tdArrival.innerText = attendanceDataRange[i].time),
-      (tdLate.innerText = attendanceDataRange[i].late),
+      (tdLate.innerText = (hours+":"+min)),
       (tdDate.innerText = attendanceDataRange[i].date),
       (tdLeave.innerText = attendanceDataRange[i].leaving),
-      (tdEarly.innerText = attendanceDataRange[i].early);
+      (tdEarly.innerText = (lhours+":"+lmin));
     row.appendChild(tduser),
       row.appendChild(tdArrival),
       row.appendChild(tdLate),
@@ -419,12 +452,17 @@ function DrawTableRange(attendanceDataRange) {
   }
 } // end attendance attendance table range
 
-window.onbeforeunload = function (e) {
-  window.location.href="employeeProfile.html";
-  e.preventDeafult();
-  alert("You can't navigate using the url");
-};
+// logout 
+logout.addEventListener('click', ()=>{
+  console.log("done ")
+})
+
+// window.onbeforeunload = function (e) {
+//   window.location.href="employeeProfile.html";
+//   // e.preventDeafult();
+// };
+
 window.history.forward();
 function noBack() {
-  window.history.forward();
+  window.location.href="home.html";
 }
